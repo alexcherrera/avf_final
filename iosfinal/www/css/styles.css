@@ -5,6 +5,7 @@
 */
 body {
 	background-color: #33A1DE;
+	border: 1px solid red;
 }
 #homeLk {
 	width: auto;

@@ -1,8 +1,8 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
-	alert("Your device is ready");
-	pictureSource=navigator.camera.PictureSourceType;
-	destinationType=navigator.camera.DestinationType;
+	//alert("Your device is ready");
+	//pictureSource=navigator.camera.PictureSourceType;
+	//destinationType=navigator.camera.DestinationType;
 }
 //Geolocation API Section
 function getGeo () {
@@ -47,24 +47,34 @@ function getGeo () {
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 //Camera API Section
-//function onCameraLoad () {
+//var onCameraLoad = function () {
+//document.addEventListener('deviceready', onDeviceReady, false);
+	/*function onDeviceReady() {
+		alert("Your Camera is ready");
+		pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
+    }*/
 //	alert("camera1");
-	function onPhotoDataSuccess(imageData) {
+	var onPhotoDataSuccess = function (imageData) {
 		alert("photoDTSuccess");
 		alert(imageData);
 		var smallImage = document.getElementById('picSmall');
 		smallImage.style.display = 'block';
 		smallImage.src = "data:image/jpeg;base64," + imageData;
 	}
-	/*function onPhotoURISuccess(imageURI) {
+	var onPhotoURISuccess = function (imageURI) {
 		alert("photoURIS");
+		alert(imageURI);
 		var largeImage = document.getElementById('picLarge');
 		largeImage.style.display = 'block';
 		largeImage.src = imageURI;
-	}*/
-	function capturePhoto() {
+	}
+	var capturePhoto = function () {
+		alert("capturePhoto");
       // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI,
+		var pictureSource=navigator.camera.PictureSourceType;
+        var destinationType=navigator.camera.DestinationType;
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URL,
 	    targetWidth: 200,
 	    targetHeight: 375 });
     }
@@ -72,19 +82,20 @@ function getGeo () {
       // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true }); 
     }*/
-	function getPhoto(source) {
+	var getPhoto = function (source) {
       // Retrieve image file location from specified source
       navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
-        destinationType: destinationType.FILE_URI,
-        sourceType: source});
+        destinationType: Camera.DestinationType.FILE_URI,
+        sourceType: 1});
     }
 
     // Called if something bad happens.
     // 
-    function onFail(message) {
+    var onFail = function (message) {
       alert('Failed because: ' + message);
     }
-	//onPhotoDataSuccess();
+	//capturePhoto();
+//}
 
 
 //Variables storing the element ID's to be later called
