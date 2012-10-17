@@ -49,13 +49,13 @@ function getGeo () {
 //Camera API Section
 //function onCameraLoad () {
 //	alert("camera1");
-	/*function onPhotoDataSuccess(imageData) {
+	function onPhotoDataSuccess(imageData) {
 		alert("photoDTSuccess");
 		alert(imageData);
 		var smallImage = document.getElementById('picSmall');
 		smallImage.style.display = 'block';
 		smallImage.src = "data:image/jpeg;base64," + imageData;
-	}*/
+	}
 	/*function onPhotoURISuccess(imageURI) {
 		alert("photoURIS");
 		var largeImage = document.getElementById('picLarge');
@@ -76,7 +76,7 @@ function getGeo () {
       // Retrieve image file location from specified source
       navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
         destinationType: destinationType.FILE_URI,
-        sourceType: Camera.PictureSourceType.CAMERA });
+        sourceType: source});
     }
 
     // Called if something bad happens.
