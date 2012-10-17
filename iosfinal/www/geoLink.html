@@ -1,0 +1,31 @@
+<!--
+	Alexander Herrera
+	AVF 1209
+	Geolocation API page HTML
+	Not using any jQuery or JQM
+-->
+<!doctype html>
+<html>
+	<head>
+	<!--Meta Tags-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<title>Geolocation</title>
+		<script src="js/libs/modernizr.custom.min.js"></script>
+	</head>
+	<body onload="getGeo()">
+		<section class="geoContent">
+			<h1>Get Your Position</h1>
+		</section>
+		<div id="geoLocaInfo"></div>
+		<div id="geoMapDisp"></div>
+		<div id="geoLocMiss"></div>
+	
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="js/cordova-2.1.0.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
