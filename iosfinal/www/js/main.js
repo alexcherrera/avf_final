@@ -1,20 +1,18 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
-	//alert("Your device is ready");
-	//pictureSource=navigator.camera.PictureSourceType;
-	//destinationType=navigator.camera.DestinationType;
+	alert("Your device is ready");
 }
 //Geolocation API Section
 function getGeo () {
 //To display the map with the current location
-	function geoMapFunc (latit, longi) {
+	var geoMapFunc = function (latit, longi) {
 		var map = document.getElementById('geoMapDisp');
 		var latitLong = latit + ", " + longi;
 		var img_url="http://maps.googleapis.com/maps/api/staticmap?center=" + latitLong + "&zoom=14&size=400x300&sensor=false";
 		map.innerHTML="<img src='"+img_url+"'>";
 	}
 //When the position is received, it triggers the onSuccess
-	function onSuccess (position) {
+	var onSuccess = function (position) {
 		console.log("Success");
         var geoTxt = document.getElementById("geoLocaInfo");
 //Created an object array containing all the coordinates
@@ -39,7 +37,7 @@ function getGeo () {
 		geoMapFunc(geoStats.latit[1], geoStats.longi[1]);
 	}
 // onError Callback receives a PositionError object
-	function onError (error) {
+	var onError = function (error) {
 		var getErrorTxt = document.getElementById("geoLocMiss");
 		getErrorTxt.innerHTML = 'code: '    + error.code    + '\n' +
 		'message: ' + error.message + '\n';
@@ -47,65 +45,81 @@ function getGeo () {
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 //Camera API Section
-//var onCameraLoad = function () {
-//document.addEventListener('deviceready', onDeviceReady, false);
-	/*function onDeviceReady() {
-		alert("Your Camera is ready");
-		pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-    }*/
-//	alert("camera1");
-	var onPhotoDataSuccess = function (imageData) {
-		alert("photoDTSuccess");
-		alert(imageData);
-		var smallImage = document.getElementById('picSmall');
-		smallImage.style.display = 'block';
-		smallImage.src = "data:image/jpeg;base64," + imageData;
-	}
-	var onPhotoURISuccess = function (imageURI) {
-		alert("photoURIS");
-		alert(imageURI);
-		var largeImage = document.getElementById('picLarge');
-		largeImage.style.display = 'block';
-		largeImage.src = imageURI;
-	}
-	var capturePhoto = function () {
-		alert("capturePhoto");
-      // Take picture using device camera and retrieve image as base64-encoded string
-		var pictureSource=navigator.camera.PictureSourceType;
-        var destinationType=navigator.camera.DestinationType;
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URL,
-	    targetWidth: 200,
-	    targetHeight: 375 });
-    }
-	/*function capturePhotoEdit() {
-      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true }); 
-    }*/
-	var getPhoto = function (source) {
-      // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
-        destinationType: Camera.DestinationType.FILE_URI,
-        sourceType: 1});
-    }
+var onPhotoDataSuccess = function (imageData) {
+	alert("photoDTSuccess");
+	alert(imageData);
+	var smallImage = document.getElementById('picSmall');
+	smallImage.style.display = 'block';
+	smallImage.src = "data:image/jpeg;base64," + imageData;
+}
+var onPhotoURISuccess = function (imageURI) {
+	alert("photoURIS");
+	alert(imageURI);
+	var largeImage = document.getElementById('picLarge');
+	largeImage.style.display = 'block';
+	largeImage.src = imageURI;
+}
+//Take picture using device camera and retrieve image as base64-encoded string
+var capturePhoto = function () {
+	alert("capturePhoto");
+	var pictureSource=navigator.camera.PictureSourceType;
+	var destinationType=navigator.camera.DestinationType;
+	navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URL,
+	targetWidth: 200,
+	targetHeight: 375 });
+}
+//Retrieve image file location from specified source
+var getPhoto = function (source) {
+	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+	destinationType: Camera.DestinationType.FILE_URI,
+	sourceType: 1});
+}
+//Function called if something bad happens.
+var onFail = function (message) {
+	alert('Failed because: ' + message);
+}
 
-    // Called if something bad happens.
-    // 
-    var onFail = function (message) {
-      alert('Failed because: ' + message);
+
+var loadTwitter = function () {
+    alert("twt");
+    if ($("#twtLink").click()) {
+    $(function () {
+        $.getJSON("http://search.twitter.com/search.json?q=class&schedule&include_entities=true&callback=?",
+        function(data) {
+            console.log(data);
+           // alert("funTwt");
+            //alert(data.completed_in);
+            
+            $("#data-msg").html("<p>Data Success</p>");
+            for (var i=0, j=data.results.length; i<j; i++) {
+                $("#data-msg").append("<li>" + "<p>" + "<img src='" + data.results[i].profile_image_url + "' />" + "<br />" + data.results[i].text + ", <em>" + data.results[i].created_at + "</em>" + "</p>" + "</li>");
+            }
+            var getJSONTwt = document.getElementById("getJSON");
+            getJSONTwt.innerHTML = "<ul><li>" + "Twitter Info" + "</li></ul>";
+            //$("#getJSON").html("<p>Info Fetched</p>");
+            for (i=0, j=data.results.length; i<j; i++) {
+                getJSONTwt.append("<ul><li><img src='" + data.results[i].profile_image_url + "' />" + "<p>" + data.results[i].from_user + "</p>" + "<p>" + data.results[i].text + "</p></ul></li>" + "<br />");
+            }
+        });
+        });
     }
-	//capturePhoto();
-//}
+};
 
 
 //Variables storing the element ID's to be later called
 var geoCall = document.getElementById("geoLink");
 var cameraCall = document.getElementById("camLink");
+var twtCall = document.getElementById("twitterLink");
+
 
 //Event listeners
+//Geolocation API event listener
 geoCall.addEventListener('click', getGeo);
-//cameraCall.addEventListener('click', onCameraLoad);
+//Camera API event listener
 cameraCall.addEventListener('click', capturePhoto);
+//Twitter API event listener
+twtCall.addEventListener('click', loadTwitter);
+
 
 	
 

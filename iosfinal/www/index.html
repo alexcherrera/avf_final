@@ -47,8 +47,6 @@
 								<img src="images/camera.png" id="picCam"/>
 								<p id="cameraText">Camera</p>
 							</a>
-							<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-							<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
 							<img id="picSmall" src=""/>
 							<img id="picLarge" src=""/>
 						</li>
@@ -98,9 +96,11 @@
 					<ul id="row2API">
 					<!--Twitter API-->
 						<li>
-							<a href="twitterLink.html">
+							<a href="#" id="twitterLink">
 								<img src="images/Twitter.png" id="picTwi"/>
 								<p id="twiText">Twitter</p>
+								<div id="data-msg"></div>
+								<div id="getJSON"></div>
 							</a>
 						</li>
 					</ul>
