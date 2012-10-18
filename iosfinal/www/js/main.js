@@ -78,11 +78,9 @@ var getPhoto = function (source) {
 var onFail = function (message) {
 	alert('Failed because: ' + message);
 }
-
-
+//Twitter
 var loadTwitter = function () {
     alert("twt");
-    if ($("#twtLink").click()) {
     $(function () {
         $.getJSON("http://search.twitter.com/search.json?q=class&schedule&include_entities=true&callback=?",
         function(data) {
@@ -102,15 +100,38 @@ var loadTwitter = function () {
             }
         });
         });
-    }
 };
-
+//Facebook
+var loadFaceBk = function () {
+	alert("facebkLink");
+    if ($("#facebkLink").click()) {
+    $(function () {
+        $.getJSON("https://graph.facebook.com/search?q=courses",
+        function(dataFacebk) {
+            console.log(dataFacebk);
+            //alert("funFacebk");
+            //alert(dataFacebk.completed_in);
+            
+            $("#data-msg-facbk").html("<p>Data Success</p>");
+            for (var f=0, b=dataFacebk.data.length; f<b; f++) {
+                $("#data-msg-faceBk").append("<li>" + "<p id='fBkTxt'>" + "<img src='" + dataFacebk.data[f].picture + "' />" + "<br />" + dataFacebk.data[f].from.name + "<br />" + dataFacebk.data[f].message + ", <em>" + dataFacebk.data[f].updated_time + "</em>" + "</p>" + "</li>");
+            }
+            var getJSONfaceBK = document.getElementById("getJSON-faceBk");
+            getJSONfaceBK.innerHTML = "<ul><li>Twitter Info</li></ul>";
+            //$("#getJSON").html("<p>Info Fetched</p>");
+            for (i=0, j=dataFacebk.results.length; i<j; i++) {
+                getJSONfaceBK.append("<img src='" + dataFacebk.results[i].profile_image_url + "' />" + "<p>" + dataFacebk.results[i].from_user + "</p>" + "<p>" + dataFacebk.results[i].text + "</p>" + "<br />");
+            }
+        });
+    });
+	}
+}
 
 //Variables storing the element ID's to be later called
 var geoCall = document.getElementById("geoLink");
 var cameraCall = document.getElementById("camLink");
 var twtCall = document.getElementById("twitterLink");
-
+var faceBkCall = document.getElementById("facebkLink");
 
 //Event listeners
 //Geolocation API event listener
@@ -119,7 +140,8 @@ geoCall.addEventListener('click', getGeo);
 cameraCall.addEventListener('click', capturePhoto);
 //Twitter API event listener
 twtCall.addEventListener('click', loadTwitter);
-
+//Facebook API event listener
+faceBkCall.addEventListener('click', loadFaceBk);
 
 	
 
