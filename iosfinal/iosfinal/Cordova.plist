@@ -34,6 +34,17 @@
 		<string>*.maps.googleapis.com</string>
 		<string>*.a0.twimg.com</string>
 		<string>*.twitter.com</string>
+		<string>*.facebook.com</string>
+		<string>*.photos-h.ak.fbcdn.net</string>
+		<string>*.external.ak.fbcdn.net</string>
+		<string>*.photos-g.ak.fbcdn.net</string>
+		<string>*.photos-e.ak.fbcdn.net</string>
+		<string>*.photos-b.xx.fbcdn.net</string>
+		<string>*.photos-d.ak.fbcdn.net</string>
+		<string>*.photos-c.ak.fbcdn.net</string>
+		<string>*.si0.twimg.com</string>
+		<string>*.p.twimg.com</string>
+		<string>*.photos-a.ak.fbcdn.net</string>
 	</array>
 	<key>Plugins</key>
 	<dict>
