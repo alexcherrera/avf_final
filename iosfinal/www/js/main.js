@@ -119,8 +119,8 @@ var loadFaceBk = function () {
 var loadWeek1 = function () {
 	alert("week1");
 	$(function () {
-		var wk1Video = document.getElementById("wk1Video");
-		wk1Video.innerHTML = ('<videowidth="640" height="480" controls="controls">' +
+		var wk1Txt = document.getElementById("wk1Text");
+		wk1Txt.innerHTML = ('<ul><li id="doc1Txt">' +
 			'<p id="w1Quest1">What types of native features (on Android and iOS devices) would you be able to implement with the use of HTML/CSS/JS only?</p>' +
 			'<p id="w1Answer1">By understanding the concept of native apps and the many opportunities that it brings I’m able to know which features to use on a given language. In this case the type of features that I would implement in my current project with HTML, CSS, and JS would be camera, contacts, geolocation, notifications, and storage.</p>' +
 			'<p id="w1Quest2">What types of features do you think will pair well together in an app?</p>' +
@@ -151,7 +151,10 @@ var loadWeek2 = function () {
 			'<p id="w2Answer4">The first application is called Proloquo2G0 that works for IOS and it’s from the company AssistiveWare. The application allows users who a speaking disability to communication with others by having built-in natural sounding speech voices that produces text-to-text, symbols, conjugations, and more. The second application is called Spiel, which is similar to Talk Back but one key difference is that it uses synthesized speech in order to describe actions and events.</p>'
 			
 		);
-	
+		var wk2Video = document.getElementById("wk2Video");
+		wk2Video.innerHTML = ('<video width="640" height="480" controls="controls">' +
+			'<source src="videos/Reflection_AVF_2.mp4" type="video/mp4"/>'
+		);
 	});
 };
 //Week 3
@@ -175,7 +178,10 @@ var loadWeek3 = function () {
             '<p id="w3Quest7">What would be your suggested strategy in project topic and global market choice?</p>' +
             '<p id="w3Answer7">By looking at all my research on the certain markets and the other concepts I have decided to base my new project on an app that is under the social media category because it is used in all markets and it the top-selling category. For the type of OS in regards to Android I would have the app be capable to work on devices running from Gingerbread to Jelly Bean because Gingerbread has the most user usage. I would try to also base the application on bandwidth friendly, such as having some of its features already included in the app and not to access the internet, yes the app would take more memory on the device but wont affect your bandwidth usage.</p>'
         );
-    
+		var wk3Video = document.getElementById("wk3Video");
+		wk3Video.innerHTML = ('<video width="640" height="480" controls="controls">' +
+			'<source src="videos/Reflection_AVF_3.mp4" type="video/mp4"/>'
+		);
     });
 };
 //Variables storing the element ID's to be later called
