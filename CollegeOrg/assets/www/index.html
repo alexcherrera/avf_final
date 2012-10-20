@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<!--Meta Tags-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<!--Page Title-->
+		<title>Launch Page</title>
+	<!--Modernizr-->
+		<script src="js/libs/modernizr.custom.min.js"></script>
+    </head>
+    <body>
+	<!--AVF Demo App Section-->
+		<section id="organizerContent" class="wrapper">
+			<section class="demoAppContLk">
+				<section class="demoAppHdLk">
+					<h1 id="demoHead">CRUD App</h1>
+				</section>
+				<section class="junlinkPic">
+					<a href="formindex.html" id="appLink">
+						<img src="images/June.png" id="picJun"/>
+					</a>
+					<p id="orgApTxt">Original app</p>
+				</section>
+			</section>
+	<!--IOS/Android Native Feature Demos Section-->
+			<section class="appFeatureCont">
+				<section class="conHeader">
+					<h1 id="appFeatureHead">IOS/Android Native Feature Demos</h1>
+				</section>
+				<article class="apiSec1">
+					<ul id="row1Features">
+					<!--Seperating the features into rows and later editing with css. There should be 3 icons in the first column (2 icons in the first and second row)-->
+						<li>
+							<a href="#" id="geoLink">
+								<img src="images/geoLink.png" id="picGeo"/>
+								<p id="geolocalText">Geolocation</p>
+							</a>
+							<div id="geoLocaInfo"></div>
+							<div id="geoLocMiss"></div>
+							<div id="geoMapDisp"></div>
+						</li>
+						<li>
+							<a href="#" id="camLink">
+								<img src="images/camera.png" id="picCam"/>
+								<p id="cameraText">Camera</p>
+							</a>
+							<img id="picSmall" src=""/>
+							<img id="picLarge" src=""/>
+						</li>
+					</ul>
+				</article>
+				<article class="apiSec2">
+					<ul id="row2Features">
+						<!--Seperating the features into rows and later editing with css. There should be 1 icons in the last row-->
+						<li>
+							<a href="#" id="contLink">
+								<img src="images/contacts.png" id="picCont"/>
+								<p id="contactsText">Contacts</p>
+							</a>
+						</li>
+						<li>
+							<a href="#" id="storeLink">
+								<img src="images/Storage.png" id="picStor"/>
+								<p id="storageText">Storage</p>
+							</a>
+						</li>
+						<li>
+							<a href="#" id="notifLink">
+								<img src="images/Notification.png" id="picNotif"/>
+								<p id="notifText">Notifications</p>
+							</a>
+						</li>
+					</ul>
+				</article>
+        	</section>
+		<!--JSON-P Data API's Section-->
+			<section class="dataAPICont">
+				<section class="conHeader">
+					<h1 id="dataAPIHead">JSON-P Data API's</h1>
+				</section>
+				<article class="apiSec1">
+                	<ul id="row1API">
+					<!--Facebook API-->
+						<li>
+							<a href="#" id="facebkLink">
+								<img src="images/Facebook.png" id="picFacebk"/>
+								<p id="facebkText">Facebook</p>
+							</a>
+								<div id="data-msg-faceBk"></div>
+								<div id="getJSON-faceBk"></div>
+							
+						</li>
+					</ul>
+				</article>
+				<article class="apiSec2">
+					<ul id="row2API">
+					<!--Twitter API-->
+						<li>
+							<a href="#" id="twitterLink">
+								<img src="images/Twitter.png" id="picTwi"/>
+								<p id="twiText">Twitter</p>
+							</a>
+								<div id="data-msg"></div>
+								<div id="getJSON-twt"></div>
+							</a>
+						</li>
+					</ul>
+				</article>
+			</section>
+		<!--Research Section-->
+			<section class="researchCont">
+				<section class="conHeader">
+					<h1 id="researchHead">Research</h1>
+				</section>
+				<article class="apiSec1">
+                	<ul id="researchLi">
+					<!--Week One Section-->
+						<li>
+							<a href="#" id="wkOneTxt">Week One: Industry Research and Project Intent</a>
+							<div id="wk1Text"></div>
+							<div id="wk1Video"></div>
+						</li>
+						<br/>
+					<!--Week Two Section-->
+						<li>
+							<a href="#" id="wkTwoTxt">Week Two: Accessibility</a>
+							<div id="wk2Text"></div>
+							<div id="wk2Video"></div>
+						</li>
+						<br/>
+					<!--Week Three Section-->
+						<li>
+							<a href="#" id="wkThreeTxt">Week Three: Market Research</a>
+							<div id="wk3Text"></div>
+							<div id="wk3Video"></div>
+						</li>
+					</ul>
+				</article> 
+			</section>
+		<!--Developer Info Section-->
+			<section class="developerCont">
+				<section class="conHeader">
+					<h1 id="developerHead">Developer Info</h1>
+				</section>
+				<article class="apiSec1">
+                	<ul id="infoUl">
+					<!--My Information-->
+						<li id="deveTxt">Alexander Herrera</li>
+						<br/>
+						<li id="courseTxt">AVF 1209</li>
+						<br/>
+					</ul>
+				</article>
+			</section>
+			<Footer>
+			<!--Navigation Bar--> 
+				<nav>
+					<ul>
+						<li><a href="index.html" class="navhome">Home</a></li>
+					</ul>
+				</nav>
+			</Footer>
+        </section>
+		<script src="http://code.jquery.com/jquery.js"></script>
+        <script type="text/javascript" src="cordova-2.1.0.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
