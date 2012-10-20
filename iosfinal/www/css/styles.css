@@ -5,38 +5,141 @@
 */
 body {
 	background-color: #33A1DE;
-	border: 1px solid red;
+	height: 100%;
+	width: 100%;
 }
-#homeLk {
-	width: auto;
-	height: auto;
+#demoHead{
 	border: 10px ridge #607B8B;
+	text-align: center;
 	background-color: #8EA4B1;
 	color:#E9F5FB;
-	padding:5px;
-	margin-bottom: 150px;
-	text-align: center;
-}
-#demoHead {
-	width: auto;
-	height: auto;
-	border: 10px ridge #607B8B;
-	background-color: #8EA4B1;
-	color:#E9F5FB;
-	padding:0;
-	text-align: center;
+	font-size: 25px;
+	padding-top: 5px;
 }
 #picJun {
+	height: 350px;
+	width: 400px;
 	display: block;
-	width: 350px;
-	height: 300px;
 	margin-left: auto;
 	margin-right: auto;
 }
 #orgApTxt {
-	text-align: center;	
+	font-size:30px;
+	border: 5px solid black;
+	text-align: center;
 	color:#E9F5FB;
-	font-size: 18px;
-#geoLocaInfo {
+	background-color: #8EA4B1;
+}
 
+li {
+	list-style-type: none;
+}
+#picCont {
+	height: 100px;
+	width: 130px;
+}
+#contactsText {
+	text-align: center;
+}
+#notifText {
+	text-align: center;
+}
+#cameraText {
+	text-align: center;
+}
+#storageText {
+	text-align: center;
+}
+#videosText {
+	text-align: center;
+}
+#picNotif {
+	height: 100px;
+	width: 130px;
+}
+#picGeo {
+	height: 100px;
+	width: 130px;
+}
+#picCam {
+	height: 100px;
+	width: 130px;
+}
+#picStor {
+	height: 100px;
+	width: 130px;
+}
+#picVide {
+	height: 100px;
+	width: 130px;
+}
+#dataAPICont {
+	width: auto;
+	height: auto;
+	background-color: #8EA4B1;
+	color:#E9F5FB;
+	margin: auto;
+}
+#dataAPIHead{
+	border: 10px ridge #607B8B;
+	text-align: center;
+	background-color: #8EA4B1;
+	color:#E9F5FB;
+}
+#picFacebk {
+	height: 100px;
+	width: 130px;
+	margin: auto;
+}
+#facebkText {
+	text-align: center;
+}
+#twiText {
+	text-align: center;
+}
+#picTwi {
+	height: 100px;
+	width: 130px;
+	padding-right: 10px;
+}
+#geolocalText {
+	display: none;
+}
+#cameraText {
+	display: none;
+}
+#contactsText {
+	display: none;
+}
+#storageText {
+	display: none;
+}
+#notifText {
+	display: none;
+}
+#facebkText {
+	display: none;
+}
+#twiText {
+	display: none;
+}
+#researchHead {
+	border: 10px ridge #607B8B;
+	text-align: center;
+	background-color: #8EA4B1;
+	color:#E9F5FB;
+}
+#developerHead {
+	border: 10px ridge #607B8B;
+	text-align: center;
+	background-color: #8EA4B1;
+	color:#E9F5FB;
+}
+.navhome {
+	border: 10px ridge #607B8B;
+	text-align: center;
+	background-color: #8EA4B1;
+	color:#E9F5FB;
+	padding-top: 5px;
+	text-align: center;
 }

@@ -78,6 +78,18 @@ var getPhoto = function (source) {
 var onFail = function (message) {
 	alert('Failed because: ' + message);
 }
+//Contacts API Section
+var loadContacts = function () {
+    alert("Comming Soon");	
+}
+//Contacts API Section
+var loadStorage = function () {
+    alert("Comming Soon");	
+}
+//Contacts API Section
+var loadNotify = function () {
+    alert("Comming Soon");	
+}
 //Twitter
 var loadTwitter = function () {
     alert("twt");
@@ -187,6 +199,9 @@ var loadWeek3 = function () {
 //Variables storing the element ID's to be later called
 var geoCall = document.getElementById("geoLink");
 var cameraCall = document.getElementById("camLink");
+var contactsCall = document.getElementById("contLink");
+var storageCall = document.getElementById("storeLink");
+var notifiyCall = document.getElementById("notifLink");
 var twtCall = document.getElementById("twitterLink");
 var faceBkCall = document.getElementById("facebkLink");
 var wk1Call = document.getElementById("wkOneTxt");
@@ -198,6 +213,12 @@ var wk3Call = document.getElementById("wkThreeTxt");
 geoCall.addEventListener('click', getGeo);
 //Camera API event listener
 cameraCall.addEventListener('click', capturePhoto);
+//Contacts API event listener
+contactsCall.addEventListener('click', loadContacts);
+//Storage API event listener
+storageCall.addEventListener('click', loadStorage);
+//Notification API event listener
+notifiyCall.addEventListener('click', loadNotify);
 //Twitter API event listener
 twtCall.addEventListener('click', loadTwitter);
 //Facebook API event listener

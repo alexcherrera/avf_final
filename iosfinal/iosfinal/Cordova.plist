@@ -45,6 +45,11 @@
 		<string>*.si0.twimg.com</string>
 		<string>*.p.twimg.com</string>
 		<string>*.photos-a.ak.fbcdn.net</string>
+		<string>*.dev.jtsage.com</string>
+		<string>*.ajax.aspnetcdn.com</string>
+		<string>*.ajax.googleapis.com</string>
+		<string>*.dev.jtsage.com</string>
+		<string>*.graph.facebook.com</string>
 	</array>
 	<key>Plugins</key>
 	<dict>
